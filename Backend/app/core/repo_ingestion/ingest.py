@@ -1,7 +1,7 @@
 import shutil
-from clone import clone_repo, get_all_files
-from filters import process_metta_files
-from config import TEMP_DIR, DATA_DIR
+from .clone import clone_repo, get_all_files
+from .filters import process_metta_files
+from .config import TEMP_DIR, DATA_DIR
 from loguru import logger
 
 def ingest_pipeline(repo_url: str) -> None:

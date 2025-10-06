@@ -4,6 +4,9 @@ from loguru import logger
 from contextlib import asynccontextmanager
 from typing import AsyncIterator, Dict
 
+from Backend.app.routers import annotation_router 
+from Backend.app.routers import chunk_router
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
@@ -22,6 +25,10 @@ async def log_requests(request: Request, call_next) -> Response:
         f"{request.method} {request.url.path} -> {response.status_code} ({duration_ms} ms)"
     )
     return response
+
+app.include_router(annotation_router.router, prefix="/api/v1")
+app.include_router(chunk_router.router)
+
 
 @app.get("/health")
 def health_check() -> Dict[str, str]:

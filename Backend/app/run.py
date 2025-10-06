@@ -1,7 +1,8 @@
 import os
 import uvicorn
 from dotenv import load_dotenv
-from app.core.log_config import setup_logging
+
+from Backend.app.core.log_config import setup_logging 
 
 load_dotenv()
 def main() -> None:
@@ -9,8 +10,7 @@ def main() -> None:
 
     reload_enabled = os.getenv("RELOAD", "0").strip() == "1"
 
-    # Always use import string to support reload reliably
-    app_ref = "app.main:app"
+    app_ref = "Backend.app.main:app" 
 
     uvicorn.run(
         app_ref,
