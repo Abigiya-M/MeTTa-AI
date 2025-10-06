@@ -1,0 +1,46 @@
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment variables
+.env
+*.env
+
+# Ignore custom script
+llm_enrichment.py
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and outputs
+*.log
+*.out
+*.pid
+
+# Testing and coverage
+.coverage
+*.cover
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+
+
+# System files
+.DS_Store
+Thumbs.db
