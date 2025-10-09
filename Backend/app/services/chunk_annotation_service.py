@@ -67,7 +67,7 @@ async def _process_single_chunk(chunk_id: str, raw_code: str) -> bool:
     
     if description:
         # Update the database with the new description
-        updates = {"description": description}
+        updates = {"annotation": description}
         modified_count = await db_operations.update_chunk(chunk_id, updates)
         
         if modified_count == 1:
