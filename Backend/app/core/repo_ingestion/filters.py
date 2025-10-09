@@ -60,7 +60,7 @@ def process_metta_files(
     repo_name: str = os.path.basename(os.path.normpath(repo_root)) if repo_root else "repo"
     
     # Define required metadata placeholders
-    PROJECT_NAME = "MeTTa-AI-experiment"
+    PROJECT_NAME = "MeTTa-AI-Assistant"
     VERSION_TAG = "main"
 
     for file in file_paths:
@@ -73,8 +73,7 @@ def process_metta_files(
             if not stripped_content:
                 logger.warning(f"Skipping file {file} (Path: {file}): Content is empty or only whitespace. Not processing.")
                 continue
-            
-            # Use content (original formatting) for storage, but ensure it's not empty
+        
             
             # The hash must be calculated after content check
             file_hash: str = hash_file_content(file)
